@@ -2,7 +2,7 @@
 
 Su kültürümüzü yeni nesillere aktaran bir oyun yapıyoruz
 
-![harita01](harita01.jpg)
+![harita](harita01.jpg)
 
 İstanbul'un su yollarını bu haritada gösterdik -- Oyunun her aşaması bu haritadan izlenebilir
 
@@ -30,8 +30,12 @@ Su kültürümüzü yeni nesillere aktaran bir oyun yapıyoruz
 ### 8. şadırvan
 ![sadirvan](8.sadirvan.jpg)
 
+### 9. hamam
+![hamam](9.hamam.jpg)
+
 ### Su Müzesi
-![harita02](harita.muze.jpg)
+![muze](harita.muze.jpg)
+
 
 ```
 (C) 2019 by Yoğunluk, Istanbul
