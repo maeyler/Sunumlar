@@ -1,9 +1,10 @@
 ## Su Yolu
 
-Su kültürümüzü yeni nesillere aktaran bir oyun
+Su kültürümüzü yeni nesillere aktaran bir oyun yapıyoruz
 
-![harita02](harita02..jpg)
-İstanbul'un su yollarını bu haritada gösterdik
+![harita01](harita01.jpg)
+
+İstanbul'un su yollarını bu haritada gösterdik -- Oyunun her aşaması bu haritadan izlenebilir
 
 ### 1. havza
 ![havza](1.havza.jpg)
@@ -30,7 +31,7 @@ Su kültürümüzü yeni nesillere aktaran bir oyun
 ![sadirvan](8.sadirvan.jpg)
 
 ### Su Müzesi
-![harita01](harita01.jpg)
+![harita02](harita.muze.jpg)
 
 ```
 (C) 2019 by Yoğunluk, Istanbul
