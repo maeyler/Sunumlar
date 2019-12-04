@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" href="su.png">
+    <title>Su Yolu </title>
+
+  <style>
+    body { 
+        max-width: 800px;
+            margin: 0;
+    }
+    img {
+        width: 100%
+    }
+    div {
+        position: fixed;
+        border: 1px solid blue;
+        cursor: pointer;
+    }
+    #d01 {
+        left: 20px;
+        top: 40px;
+        width: 100px;
+        height: 60px;
+    }
+    #d08 {
+        left: 200px;
+        top: 140px;
+        width: 100px;
+        height: 60px;
+    }
+    p {
+        position: fixed;
+        top: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+<img id=harita src=harita01.jpg></img>
+<div id=d01></div>
+<div id=d08></div>
+<p>V0.1</p>
+
+<script>
+"use strict";
+var anim
+var dur = 3000 //msec
+const a1 = ['scale(1)', 'scale(3)']
+const a8 = ['scale(1)', 'scale(1.2)', 'scale(2)', 'scale(2.8)', 'scale(3)']
+function zoom(e) {
+    console.log("zoom")
+    let aa = (e.target.id == 'd01')? a1 : a8
+    anim = harita.animate({transform: aa}, dur)
+    harita.style.transform = aa[aa.length-1]
+    harita.onclick = normal
+    for (let d of document.querySelectorAll('div'))
+        d.style.display = 'none'
+}
+function normal(e) {
+    console.log("normal")
+    anim.reverse()
+    harita.style.transform =''
+    harita.onclick = ''
+    setTimeout(clear, dur)
+  function clear() {
+    for (let d of document.querySelectorAll('div'))
+        d.style.display = ''
+  }
+}
+
+    d01.onclick = zoom; d08.onclick = zoom
+</script>
+
+</body>
+</html>
