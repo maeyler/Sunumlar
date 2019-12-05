@@ -1,10 +1,10 @@
 ## Su Yolu
 
-Su kültürümüzü yeni nesillere aktaran bir oyun yapıyoruz
+Su kültürümüzü yeni nesillere aktaran [bir oyun](index) yapıyoruz
 
 ![harita](harita01.jpg)
 
-İstanbul'un su yollarını bu haritada gösterdik -- Oyunun her aşaması bu haritadan izlenebilir
+İstanbul'un su yollarını gösteren bu haritada oyunun aşamaları izlenebilir
 
 ### 1. havza
 ![havza](1.havza.jpg)
