@@ -6,17 +6,8 @@
     <link rel="icon" href="su.png">
     <title>Su Yolu </title>
   <style>
-    body { 
-        margin: 0;
-        background: gray;
-    }
-    img {
-        position: fixed;
-        width: 100%;
-        top: 0; left: 0;
-        opacity: 0;
-        transition: opacity 3s ease;
-    }
+    body { margin: 0; }
+    img { width: 100% }
     div {
         position: fixed;
         border: 1px solid cyan;
@@ -46,11 +37,10 @@
 
 <body>
 
-<p id=version>V0.4</p>
+<p id=version>V0.3</p>
 <p id=fileName></p>
 
 <img id=harita src=harita01.jpg></img>
-<img id=oyun></img>
 
 <div id=d01 title='1.havza.jpg'></div>
 <div id=d02 title='2.bent.jpg'></div>
@@ -65,55 +55,44 @@
 <script src="https://lab.hakim.se/zoom-js/js/zoom.js"></script>
 <script>
 "use strict";
-var elt //selected game
-const dur = 2000 //msec
-const smooth = "-webkit-transform 2s ease"
-function boxStyle(s='') {
+var file
+var dur = 3000 //msec
+const b0 = 'translate(0, 0)'
+const a1 = ['scale(1) translate(0, 0)', 'scale(3) translate(xxx)']
+function boxStyle(s) {
     for (let d of document.querySelectorAll('div'))
         d.style.display = s
 }
-function handleClick(e) {
-	if (zoom.zoomLevel() > 1) return
-    elt = e.target
-    if (!elt.title) return
-    e.preventDefault()
-    console.log("zoom", elt.title)
-    document.body.style.transition = smooth
-    zoom.to({ element: elt, pan: false })
-    setTimeout(toGame, 2*dur)
-}
-function toGame() {
-    let file = elt.title
+function display() {
+    console.log("display", file)
     if (!file) return
-    oyun.src = file
-    harita.style.opacity = ''
+    harita.src = file
     let k = file.indexOf('.jpg')
-    let name = file.substring(0, k)
-    fileName.innerText = name
+    fileName.innerText = file.substring(0, k)
+    harita.onclick = normal
     boxStyle('none')
-    setTimeout(faded, dur)
-  function faded() {
-    document.body.style.transition = ''
-    zoom.out()
-    oyun.style.opacity = 1
-    oyun.onclick = toMap
-  }
+    setTimeout(zoom.out, 10)
+    //harita.style.transform =''
 }
-function toMap(e) {
-    console.log("toMap")
-    e.preventDefault()
-    oyun.style.opacity = ''
-    oyun.onclick = ''
+function normal() {
+    console.log("normal")
+    harita.src = 'harita01.jpg'
+    harita.onclick = ''
     fileName.innerText = ''
-    setTimeout(faded, dur)
-  function faded() {
-    harita.style.opacity = 1
-    setTimeout(boxStyle, dur)
-  }
+    boxStyle('')
 }
-
+function handleClick(e) {
+	if (zoom.zoomLevel() > 1) normal()
+	else {
+	    let t = e.target; file = t.title
+	    if (!file) return
+	    e.preventDefault()
+        console.log("zoom", file)
+	    zoom.to({ element: t, pan: false })
+	    setTimeout(display, dur)
+	}
+}
 	document.body.onclick = handleClick
-	harita.style.opacity = 1
 </script>
 </body>
 </html>
