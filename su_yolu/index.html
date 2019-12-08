@@ -11,14 +11,18 @@
         background: gray;
     }
     img {
-        position: fixed;
+        position: absolute;
         width: 100%;
         top: 0; left: 0;
         opacity: 0;
-        transition: opacity 3s ease;
+        transition: opacity 2s ease;
     }
-    div {
-        position: fixed;
+    #main {
+        position: absolute;
+        top: 0;
+    }
+    .box {
+        position: inherit;
         border: 1px solid cyan;
         cursor: pointer;
         width: 15vw;
@@ -31,37 +35,48 @@
     #d05 { left: 30vw; top: 34vw; }
     #d06 { left: 39vw; top: 17vw; }
     #d07 { left: 47vw; top:  1vw; }
-    #d08 { left: 58vw; top: 32vw; }
+    #d08 { left: 58vw; top: 30vw; }
     #d09 { left: 43vw; top: 44vw; }
-    #version {
-        position: fixed;
-        top: 0; margin: 5px;
+    #surum { top: 0; }
+    #isim  { bottom: 0; }
+    #metin {
+        top: 10vw; height: 8vw;
+        left: 25%; width: 50%;
+        background: darkblue;
+        color: yellow;
+        font-size: 3vw;
+        text-align: center;
+        padding: 1vw;
     }
-    #fileName {
+    #surum, #isim, #metin {
         position: fixed;
-        bottom: 0; margin: 5px;
+        margin: 5px;
+        z-index: 1;
     }
   </style>
 </head>
 
 <body>
 
-<p id=version>V0.4</p>
-<p id=fileName></p>
+  <img id=harita src=harita01.jpg></img>
+  <img id=oyun></img>
+  <p id=surum>V0.5</p>
+  <p id=isim></p>
+  <p id=metin></p>
 
-<img id=harita src=harita01.jpg></img>
-<img id=oyun></img>
+<div id=main>
+  <div id=d01 class=box></div>
+  <div id=d02 class=box></div>
+  <div id=d03 class=box></div>
+  <div id=d04 class=box></div>
+  <div id=d05 class=box></div>
+  <div id=d06 class=box></div>
+  <div id=d07 class=box></div>
+  <div id=d08 class=box></div>
+  <div id=d09 class=box></div>
+</div>
 
-<div id=d01 title='1.havza.jpg'></div>
-<div id=d02 title='2.bent.jpg'></div>
-<div id=d03 title='3.galeri.jpg'></div>
-<div id=d04 title='4.havuz.jpg'></div>
-<div id=d05 title='5.kemer.jpg'></div>
-<div id=d06 title='6.maksem.jpg'></div>
-<div id=d07 title='7.cesme.jpg'></div>
-<div id=d08 title='8.sadirvan.jpg'></div>
-<div id=d09 title='9.hamam.jpg'></div>
-
+<script src="https://code.responsivevoice.org/responsivevoice.js?key=Ayb0S4YG"></script> 
 <script src="https://lab.hakim.se/zoom-js/js/zoom.js"></script>
 <script>
 "use strict";
@@ -69,8 +84,8 @@ var elt //selected game
 const dur = 2000 //msec
 const smooth = "-webkit-transform 2s ease"
 function boxStyle(s='') {
-    for (let d of document.querySelectorAll('div'))
-        d.style.display = s
+    //for (let d of document.querySelectorAll('.box'))
+    main.style.display = s
 }
 function handleClick(e) {
 	if (zoom.zoomLevel() > 1) return
@@ -80,22 +95,26 @@ function handleClick(e) {
     console.log("zoom", elt.title)
     document.body.style.transition = smooth
     zoom.to({ element: elt, pan: false })
+    //harita.onclick = toGame
     setTimeout(toGame, 2*dur)
 }
 function toGame() {
-    let file = elt.title
-    if (!file) return
-    oyun.src = file
-    harita.style.opacity = ''
-    let k = file.indexOf('.jpg')
-    let name = file.substring(0, k)
-    fileName.innerText = name
+    //harita.onclick = ''
+    if (!elt.title) return
+    document.body.style.transition = ''
+    zoom.out()  //fast
+    let m = elt.message  //eltToMsg.get(elt)
+    toSpeech(m); metin.innerText = m
+    metin.style.display = ''
+    setTimeout(()=> {metin.style.display = 'none'}, 2*dur)
+    harita.style.display = 'none'
+    isim.innerText = elt.title
+    oyun.src = elt.title+'.jpg'
+    oyun.style.opacity = 1
     boxStyle('none')
     setTimeout(faded, dur)
   function faded() {
-    document.body.style.transition = ''
-    zoom.out()
-    oyun.style.opacity = 1
+    console.log("faded")
     oyun.onclick = toMap
   }
 }
@@ -104,15 +123,36 @@ function toMap(e) {
     e.preventDefault()
     oyun.style.opacity = ''
     oyun.onclick = ''
-    fileName.innerText = ''
-    setTimeout(faded, dur)
-  function faded() {
-    harita.style.opacity = 1
-    setTimeout(boxStyle, dur)
-  }
+    metin.innerText = ''
+    isim.innerText = ''
+    harita.style.display = ''
+    boxStyle('')
 }
-
-	document.body.onclick = handleClick
+function toSpeech(t) { 
+    if (!t || !responsiveVoice) return 
+    responsiveVoice.speak(t, "Turkish Female")
+}
+//const eltToMsg = new Map()
+function initMap() {
+    const a = [
+'1.havza#Birinci oyun: Havzadaki su yollarını birleştirelim',
+'2.bent#İkinci oyun: Tuğlaları kullanarak bent yapalım',
+'3.galeri#Üçüncü oyun: Galeride hangi kapaklar daha uygun?',
+'4.havuz#Dördüncü oyun: Havuzun giriş ve çıkış düzeylerini ayarlayalım',
+'5.kemer#Beşinci oyun: Tepelerin arasını su kemeri ile bağlayalım',
+'6.maksem#Altıncı oyun: Maksemden geçen suyu taksim edelim',
+'7.cesme#Yedinci oyun: Çeşmeyi tamir ettikten sonra sakayı bulalım',
+'8.sadirvan#Sekizinci oyun: Şadırvan yıkılmış, tamir edelim',
+'9.hamam#Dokuzuncu oyun: Hamama giren terler!' ]
+    for (let i=0; i<a.length; i++) {
+        let [t, m] = a[i].split('#')
+        let e = main.querySelector('#d0'+(i+1))
+        e.title = t; e.message = m //eltToMsg.set(e, m)
+    }
+}
+    metin.style.display = 'none'; initMap()
+    //responsiveVoice.setDefaultVoice("Turkish Female")
+	main.onclick = handleClick
 	harita.style.opacity = 1
 </script>
 </body>

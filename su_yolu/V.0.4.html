@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" href="su.png">
+    <title>Su Yolu </title>
+  <style>
+    body { 
+        margin: 0;
+        background: gray;
+    }
+    img {
+        position: fixed;
+        width: 100%;
+        top: 0; left: 0;
+        opacity: 0;
+        transition: opacity 3s ease;
+    }
+    div {
+        position: fixed;
+        border: 1px solid cyan;
+        cursor: pointer;
+        width: 15vw;
+        height: 9vw;
+    }
+    #d01 { left:  1vw; top:  9vw; }
+    #d02 { left: 17vw; top: 10vw; }
+    #d03 { left: 16vw; top: 20vw; }
+    #d04 { left: 13vw; top: 40vw; }
+    #d05 { left: 30vw; top: 34vw; }
+    #d06 { left: 39vw; top: 17vw; }
+    #d07 { left: 47vw; top:  1vw; }
+    #d08 { left: 58vw; top: 32vw; }
+    #d09 { left: 43vw; top: 44vw; }
+    #version {
+        position: fixed;
+        top: 0; margin: 5px;
+    }
+    #fileName {
+        position: fixed;
+        bottom: 0; margin: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+<p id=version>V0.4</p>
+<p id=fileName></p>
+
+<img id=harita src=harita01.jpg></img>
+<img id=oyun></img>
+
+<div id=d01 title='1.havza.jpg'></div>
+<div id=d02 title='2.bent.jpg'></div>
+<div id=d03 title='3.galeri.jpg'></div>
+<div id=d04 title='4.havuz.jpg'></div>
+<div id=d05 title='5.kemer.jpg'></div>
+<div id=d06 title='6.maksem.jpg'></div>
+<div id=d07 title='7.cesme.jpg'></div>
+<div id=d08 title='8.sadirvan.jpg'></div>
+<div id=d09 title='9.hamam.jpg'></div>
+
+<script src="https://lab.hakim.se/zoom-js/js/zoom.js"></script>
+<script>
+"use strict";
+var elt //selected game
+const dur = 2000 //msec
+const smooth = "-webkit-transform 2s ease"
+function boxStyle(s='') {
+    for (let d of document.querySelectorAll('div'))
+        d.style.display = s
+}
+function handleClick(e) {
+	if (zoom.zoomLevel() > 1) return
+    elt = e.target
+    if (!elt.title) return
+    e.preventDefault()
+    console.log("zoom", elt.title)
+    document.body.style.transition = smooth
+    zoom.to({ element: elt, pan: false })
+    setTimeout(toGame, 2*dur)
+}
+function toGame() {
+    let file = elt.title
+    if (!file) return
+    oyun.src = file
+    harita.style.opacity = ''
+    let k = file.indexOf('.jpg')
+    let name = file.substring(0, k)
+    fileName.innerText = name
+    boxStyle('none')
+    setTimeout(faded, dur)
+  function faded() {
+    document.body.style.transition = ''
+    zoom.out()
+    oyun.style.opacity = 1
+    oyun.onclick = toMap
+  }
+}
+function toMap(e) {
+    console.log("toMap")
+    e.preventDefault()
+    oyun.style.opacity = ''
+    oyun.onclick = ''
+    fileName.innerText = ''
+    setTimeout(faded, dur)
+  function faded() {
+    harita.style.opacity = 1
+    setTimeout(boxStyle, dur)
+  }
+}
+
+	document.body.onclick = handleClick
+	harita.style.opacity = 1
+</script>
+</body>
+</html>
