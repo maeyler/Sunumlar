@@ -11,4 +11,7 @@ M Akif Eyler,
 [Zoom linki](https://fsm-edu-tr.zoom.us/j/95633751389?pwd=RE5UdGVpNXN0aCt4UU9CbkxCeXpGZz09) <br>
 ID: 956 3375 1389  Passcode: 112233
 
+Sunumdaki bazı ayrıntıları görmek için telefon ekranı yetersiz kalabilir, 
+tablet ya da diz-üstü ekrandan izlemenizi tavsiye ederim.
+
 ![sinan](sinan.jpg)
