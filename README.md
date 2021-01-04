@@ -3,6 +3,7 @@ Personal presentations -- in pdf
 
 Time | Link
 ---- | ----
+Jan 2021 | [Güneş Saati](Günes%20saati.pdf)
 Nov 2020 | [Mimar Sinan](Mimar%20Sinan%20sunum.pdf)
 Feb 2020 | [Neden JavaScript](Neden%20JavaScript.pdf)
 Apr 2019 | [Cepte Bilgisayar](Cepte%20Bilgisayar.pdf)
