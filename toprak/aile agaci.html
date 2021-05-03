@@ -17,7 +17,8 @@
         margin: 0;
     }
     details {
-        margin: 1em 1.5em;
+        margin: 0.7em;
+        margin-left: 1.4em;
     }
     details.ali {
         margin-left: 8px;
@@ -28,6 +29,7 @@
     }
     ul { margin: 12px 0; }
     li { margin: 5px -5px; }
+    summary > p { margin: 4px;}
     summary.root {
         font-size: 20px;
         font-weight: bold;
@@ -41,7 +43,7 @@
     <summary class="root"><a target="hacel" 
       href="https://hacelefendi.blogspot.com/2019/02/evladi-ve-ahfadi.html"
       >Hacı Ali Efendi</a> (1854-1918) <br> 
-      <p>&emsp; 
+      <p>&ensp; 
       <button id=cocuk>Çocukları</button> &ensp;
       <button id=torun>Torunları</button> &ensp;
       <button id=hepsi>Ahfâdı</button> </p>         
@@ -313,7 +315,10 @@
 <br>
 <p class="note">Hacı Ali dedemizin soyundan gelen kişilerin
   2020 başında, pandemi öncesi durumunu gösterir. 
-  Daha sonra doğanlar ağaca eklenmemiştir.</p>
+  Daha sonra doğanlar ağaca eklenmemiştir. <br><br>
+  Altı çizili isimlere tıklayınca ilgili kişinin sayfası açılır.
+  Üçgenlere ve yıllara tıklayınca bilgiler açılır ya da gizlenir.
+</p>
 <br>
 <script>
 const da = document.querySelectorAll('details')
@@ -324,7 +329,7 @@ torun.onclick = () =>
     {for (let d of da) d.open = (d.classList.length > 0)}
 hepsi.onclick = () => 
     {for (let d of da) d.open = true}
-torun.click()  //initial state
+// torun.click()  //initial state
 </script>
 </body>
 </html>
