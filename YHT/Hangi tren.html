@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="tr-TR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" href="tren.png">
+    <title>Hangi Tren </title>
+
+  <style>
+    body {
+        max-width: 400px;
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1.6;
+    }
+    select {
+        height: 2em;
+    }
+    #lst {
+        height: 280px; width: 16em;
+        overflow: auto;
+    }
+    #lst li {
+        height: 28px;
+        list-style: none
+    }
+    #out { color: blue; }
+    .past { color: gray; }
+    .bold { font-weight: bold; }
+  </style>
+</head>
+
+<body>
+
+<h2 id=title></h2>
+
+<p>Yeriniz: 
+<select id=menu onChange="console.log(value)">
+    <option>Söğütlü
+    <option>Feneryolu
+    <option>Göztepe
+    <option>Erenköy
+    <option>Suadiye
+    <option>Bostancı
+</select>
+</p>
+<ul id=lst></ul>
+<pre id=out></pre>
+<hr />
+
+<script>
+"use strict";
+function minToString(t) {
+    let twoDigits = x => x.toString().padStart(2,'0')
+    return twoDigits(Math.trunc(t/60))+':'+twoDigits(t%60)
+}
+function error(t) {
+    out.style.color = 'red'
+    out.innerText = t; throw t
+}
+const data = []
+async function readData() {
+    const u = "tarife.txt"
+    let r = await fetch(u)
+    if (!r.ok) error(r.status)
+    let t = await r.text()
+    if (!t) error('data not found')
+    for (let s of t.split('\n')) {
+        let [orgn, time, minute, dest] = s.split('\t')
+        let depart = ['Söğütlü','Halkalı'].includes(orgn)
+        data.push({orgn, time, minute, dest, depart})
+        console.assert(time == minToString(minute), time)
+    }
+    showData()
+}
+function showData() {
+    let d = new Date().toTimeString().slice(0,5)
+    let a = [], n = -1
+    for (const x of data) {
+        let cls = x.time<d ? 'past' : ''
+        let li = '<li class='+cls+'>'
+        a.push(li+x.time+' '+x.orgn+'&ndash;'+x.dest)
+        if (cls) n++
+    }
+    lst.innerHTML = a.join('\n')
+    let f = lst.children[n+1]
+    f.classList.add('bold')
+    let p = f.previousSibling
+    if (p) p.scrollIntoView()
+}
+title.innerText = document.title
+readData()
+</script>
+</body>
+</html>
