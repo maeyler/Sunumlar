@@ -57,14 +57,16 @@ function error(t) {
     out.style.color = 'red'
     out.innerText = t; throw t
 }
-const data = []
-async function readData() {
-    const u = "tarife.txt"
+async function readText(u) {
     let r = await fetch(u)
     if (!r.ok) error(r.status)
     let t = await r.text()
     if (!t) error('data not found')
-    for (let s of t.split('\n')) {
+    return t.split('\n')
+}
+const data = []
+async function readData() {
+    for (let s of await readText("tarife.txt")) {
         let [orgn, time, minute, dest] = s.split('\t')
         let depart = ['Söğütlü','Halkalı'].includes(orgn)
         data.push({orgn, time, minute, dest, depart})
