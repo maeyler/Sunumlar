@@ -1,0 +1,6 @@
+Söğütlü	0	
+Feneryolu	3	
+Göztepe	5	
+Erenköy	7	
+Suadiye	9	
+Bostancı	11	

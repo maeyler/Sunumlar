@@ -12,11 +12,18 @@
         font-family: Arial, Helvetica, sans-serif;
         line-height: 1.6;
     }
+    #loc {
+        position: fixed;
+        left: 200px; top: 6px;
+        white-space: nowrap;
+    }
     select {
         height: 2em;
+        font-size: initial;
     }
     #lst {
-        height: 280px; width: 16em;
+        height: calc(100vh - 110px); 
+        width: 16em;
         overflow: auto;
     }
     #lst li {
@@ -33,15 +40,9 @@
 
 <h2 id=title></h2>
 
-<p>Yeriniz: 
-<select id=menu onChange="console.log(value)">
-    <option>Söğütlü
-    <option>Feneryolu
-    <option>Göztepe
-    <option>Erenköy
-    <option>Suadiye
-    <option>Bostancı
-</select>
+<p id=loc>Yeriniz: 
+    <select id=menu onChange="showStop(value)">
+    </select>
 </p>
 <ul id=lst></ul>
 <pre id=out></pre>
@@ -64,30 +65,52 @@ async function readText(u) {
     if (!t) error('data not found')
     return t.split('\n')
 }
-const data = []
+const data = [], durak = []
 async function readData() {
     for (let s of await readText("tarife.txt")) {
-        let [orgn, time, minute, dest] = s.split('\t')
-        let depart = ['Söğütlü','Halkalı'].includes(orgn)
-        data.push({orgn, time, minute, dest, depart})
+        let [origin, time, minute, dest] = s.split('\t')
+        let depart = ['Söğütlü','Halkalı'].includes(origin)
+        minute = Number(minute)
+        data.push({origin, time, minute, dest, depart})
         console.assert(time == minToString(minute), time)
     }
-    showData()
+    let a = []
+    for (let s of await readText("durak.txt")) {
+        let [name, delay] = s.split('\t')
+        delay = Number(delay)
+        durak.push({name, delay})
+        a.push('<option>'+name)
+    }
+    menu.innerHTML = a.join('\n')
+    showData(0)
 }
-function showData() {
-    let d = new Date().toTimeString().slice(0,5)
+function showData(delay) {
+    let t = Date.now() - 3*60*1000  //3 minutes
+    let d = new Date(t).toTimeString().slice(0,5)
     let a = [], n = -1
-    for (const x of data) {
-        let cls = x.time<d ? 'past' : ''
-        let li = '<li class='+cls+'>'
-        a.push(li+x.time+' '+x.orgn+'&ndash;'+x.dest)
-        if (cls) n++
+    for (let x of data) {
+        let delta = x.depart? delay : -delay
+        let time = minToString(x.minute+delta)
+        if (time < d) n++
+        a.push(time+' '+x.origin+'&ndash;'+x.dest)
+        a.sort()
+    }
+    for (let i = 0; i < a.length; i++) {
+        let cls = i<=n ? 'class=past' : ''
+        a[i] = '<li '+cls+'>'+a[i]
     }
     lst.innerHTML = a.join('\n')
+    if (n === a.length-1) return
     let f = lst.children[n+1]
     f.classList.add('bold')
     let p = f.previousSibling
     if (p) p.scrollIntoView()
+}
+function showStop(n) {
+    let s = durak.find(x => x.name == n)
+    if (s) {
+        console.log(s); showData(s.delay)
+    } else console.error(n, 'not found')
 }
 title.innerText = document.title
 readData()
