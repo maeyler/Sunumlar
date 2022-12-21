@@ -1,6 +1,12 @@
-Söğütlü	0	
-Feneryolu	3	
-Göztepe	5	
-Erenköy	7	
-Suadiye	9	
-Bostancı	11	
+Söğütlü	0	40.9908	29.0379	
+Feneryolu	3	40.9783	29.0500	
+Göztepe	5	40.9795	29.0657	
+Erenköy	7	40.9722	29.0762	
+Suadiye	9	40.9605	29.0850	
+Bostancı	11	40.9538	29.0954	
+Küçükyalı	13	40.9462	29.1069	
+İdealtepe	15	40.9377	29.1143	
+Maltepe	17	40.9204	29.1345	
+Atalar	20	40.8987	29.1691	
+Kartal	24	40.8893	29.1860	
+Pendik	30	40.8803	29.2312	
