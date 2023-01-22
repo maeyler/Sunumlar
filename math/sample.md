@@ -1,10 +1,10 @@
 ## GitHub içinde TeX
 
-Matematik formüllerini kitap kalitesinde yazmanın en kolay yolu TeX, şimdi GitHub içinde. MD (markdown) formatında birkaç örnek:
+Matematik formüllerini kitap kalitesinde yazmanın en kolay yolu TeX, şimdi GitHub sayfalarında... MD (markdown) formatında birkaç örnek:
 
 * Quadratic Formula -- [github blog](https://github.blog/2022-05-19-math-support-in-markdown)
 
-$$ \text{When } a \ne 0 \text{, two solutions of } (ax^2 + bx + c = 0) \text{:  } $$
+$$ \text{Solutions of } (ax^2 + bx + c = 0) \text{ if } a \ne 0  $$
 
 $$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$
 
@@ -22,8 +22,8 @@ $$ \large f(a) = \frac{1}{2\pi i} \oint\frac{f(z)}{z-a}dz $$
 
 $$ \cos(\theta+\phi)=\cos(\theta)\cos(\phi)−\sin(\theta)\sin(\phi) $$
 
-TeX formülünü görmek için bağlam menüsünü kullanın <br>
-(mouse varsa sağ tıklayın, yoksa parmağı basılı tutun) <br>
+TeX formülü için bağlam menüsünü kullanın <br>
+(mouse varsa sağ tıklayın, yoksa basılı tutun) <br>
 ![sample image](./image/MathJax%20menu.png)
 
 <pre>
@@ -32,7 +32,7 @@ TeX formülünü görmek için bağlam menüsünü kullanın <br>
 
 <style>
   body { 
-    max-width: 500px; 
+    max-width: 550px; 
     background: #dff;
   }
 </style>
