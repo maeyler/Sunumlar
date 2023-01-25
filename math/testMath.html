@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- link rel="shortcut icon" type="image/x-icon" href="/Sunumlar/favicon.ico" -->
+  <style>
+    body { 
+      max-width: 550px; 
+      background: #dff;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+  </style>  
+  </head>
+  <body>
+
+<h2 id="github-içinde-tex">GitHub içinde TeX</h2>
+
+<p>Matematik ifadeleri  kitap kalitesinde yazmanın en kolay yolu TeX, şimdi GitHub sayfalarında…  \(n=1\) için birkaç örnek:</p>
+
+• Quadratic Formula -- <a href="https://github.blog/2022-05-19-math-support-in-markdown">github blog</a></li>
+
+$$ \text{Solutions of } (ax^2 + bx + c = 0) \text{ if } a \ne 0 $$
+
+$$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$
+
+$$ \text{note that as } a \to 0, \hspace{10px} x \to (-c/b) $$
+
+
+• Cauchy -- <a href="https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/writing-mathematical-expressions">github docs</a></li>
+
+$$ \left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right) $$
+
+$$ \large f(a) = \frac{1}{2\pi i} \oint\frac{f(z)}{z-a}dz $$
+
+
+• Inline math -- with $ or \\(
+
+Using `$`:  $\sqrt{3x-1}+(1+x)^2$ fails
+
+Using `\(`:  \(\sqrt{3x-1}+(1+x)^2\) fails
+
+
+• Cosine sum -- <a href="https://www.mathjax.org/#samples">MathJax</a></li>
+
+$$ \cos(\theta+\phi)=\cos(\theta)\cos(\phi)-\sin(\theta)\sin(\phi) $$
+
+<p>TeX formülü için bağlam menüsünü kullanın <br />
+(mouse varsa sağ tıklayın, yoksa basılı tutun) <br />
+<img src="./image/MathJax%20menu.png" alt="sample image" /></p>
+
+<pre>
+\cos(\theta+\phi)=\cos(\theta)\cos(\phi)-\sin(\theta)\sin(\phi)
+</pre>
+
+<script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  </body>
+</html>
