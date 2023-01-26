@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- link rel="shortcut icon" type="image/x-icon" href="/Sunumlar/favicon.ico" -->
+    <title>GitHub içinde TeX</title>
   <style>
     body { 
       max-width: 550px; 
       background: #dff;
       font-family:Arial, Helvetica, sans-serif;
+      margin: 12px;
+    }
+    img {
+      max-width: 100%; 
     }
   </style>  
   </head>
@@ -35,11 +39,9 @@ $$ \left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) 
 $$ \large f(a) = \frac{1}{2\pi i} \oint\frac{f(z)}{z-a}dz $$
 
 
-• Inline math -- with $ or \\(
-
-Using `$`:  $\sqrt{3x-1}+(1+x)^2$ fails
-
-Using `\(`:  \(\sqrt{3x-1}+(1+x)^2\) fails
+• Inline math -- '$' fails, use '\<span>(</span>' <br>
+<br>
+sample fomula \(\sqrt{3x-1}+x^2\) is OK <br><br>
 
 
 • Cosine sum -- <a href="https://www.mathjax.org/#samples">MathJax</a></li>

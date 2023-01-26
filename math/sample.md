@@ -31,7 +31,7 @@ $$ \large f(a) = \frac{1}{2\pi i} \oint\frac{f(z)}{z-a}dz $$
 
 Using `$`:  $\sqrt{3x-1}+(1+x)^2$ fails
 
-Using `\(`:  \\(\sqrt{3x-1}+(1+x)^2\\) fails -->
+Using `\(`:  \(\sqrt{3x-1}+(1+x)^2\) fails -->
 
 • Cosine sum -- [MathJax](https://www.mathjax.org/#samples)
 
@@ -48,6 +48,7 @@ TeX formülü için bağlam menüsünü kullanın <br>
 x = {-b \pm \sqrt{b^2-4ac} \over 2a}
 \text{note that as } a \to 0, \hspace{10px} x \to (-c/b)
 
-\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
+\left( \sum_{k=1}^n a_k b_k \right)^2 \leq 
+    \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
 \large f(a) = \frac{1}{2\pi i} \oint\frac{f(z)}{z-a}dz
 </pre>
