@@ -5,8 +5,6 @@
   }
 </style>
 
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
 
 ## GitHub içinde TeX
 
@@ -27,11 +25,11 @@ $$\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \
 
 $$ \large f(a) = \frac{1}{2\pi i} \oint\frac{f(z)}{z-a}dz $$
 
-<!-- • Inline math -- with $ or \\(
+• Inline math -- with `$` or `\(`
 
-Using `$`:  $\sqrt{3x-1}+(1+x)^2$ fails
+use dollar sign:  $\sin(n\pi) = 0 \quad$  OK
 
-Using `\(`:  \(\sqrt{3x-1}+(1+x)^2\) fails -->
+use backslash: \(\sqrt{3x-1}+x^2 \quad\) fails
 
 • Cosine sum -- [MathJax](https://www.mathjax.org/#samples)
 
@@ -52,3 +50,10 @@ x = {-b \pm \sqrt{b^2-4ac} \over 2a}
     \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
 \large f(a) = \frac{1}{2\pi i} \oint\frac{f(z)}{z-a}dz
 </pre>
+
+
+<script>
+  inlineMath = [['$', '$'], ['\\(', '\\)']]
+  MathJax = {tex: {inlineMath}}
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
