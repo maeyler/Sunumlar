@@ -1,8 +1,9 @@
 ## Sunumlar
-Aşağıdaki sunumların çoğu pdf, iki tanesi html.
+Aşağıdaki sunumların çoğu pdf, üç tanesi html.
 
 Zaman | Link | Video
 ----- | ---- | -----
+Şub 2023 | [Sanal Kitaplarım](gozlemler/work.html) |
 Mar 2022 | [Korunmuş Kitap](https://okuyun.github.io/Kitap/KK/korunmus) | [YT](https://youtu.be/-yQ-CEKOYzU)
 Ara 2021 | [Origami -- Kent Ü](Origami_Kent.pdf) |
 Şub 2021 | [Mucem Nedir?](Mucem%20Nedir.pdf) | [YT](https://youtu.be/wv6aCPWrCf4)
