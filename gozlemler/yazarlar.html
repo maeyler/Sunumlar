@@ -5,7 +5,7 @@
     <title>Yazarlar</title>
     <style>
         body {
-            max-width: 500px;
+            max-width: 420px;
             background-color: rgb(248, 230, 195);
             font-family: Trebuchet, Verdana, sans-serif;
             font-size: 15px;
@@ -13,6 +13,12 @@
     @media screen and (min-width: 510px) {
        body  { margin: auto;}
     }
+        h3 {
+            text-align: center;
+            background: darkblue;
+            color: white;
+            padding: 8px;
+        }
     </style>
 <!--     
 <div class="my-item">
@@ -36,6 +42,7 @@
         width: 70%;
         display: inline-block;
         vertical-align: top;
+        font-size: 13px;
         margin: 5px;
     }
     .my-item a {
@@ -53,24 +60,18 @@
     
 <p>Gözlemler'e en az üç katkı yapan yazarların listesi</p>
 
-<h3>1. Erkan Türe</h3>
+<h3 id=ture>Erkan Türe</h3>
 <div class="my-item">
-    <div class="my-date">28 Mart 2020</div>
-    <a href="https://gozlemler.blogspot.com/2020/03/odtu.html">ODTÜ’de Önce Öğrenci Sonra Hoca</a>
-    <img src="https://lh3.googleusercontent.com/_x_e1oGS8yVnw5YL48Jfb5sDOfx-0YPuBhgF_Ah3ta6N6Px6nxKsaTqHJqrxev1TZRAoX0a9tWoTKWilTtxEs7-uSOruz2bisHz9G9Be0jS4i0VZrTD13II2Vzys5qm5TPmhP7FO5t9uHO8S4TKp9A=s72-c" />
-    <div class="my-text">Bir Ankara’lı olarak 1972 yılında Ankara Kurtuluş Lisesini birincilikle bitirdiğimde mühendislik okumak istiyordum.</div>
+    <div class="my-date">10 Mayıs 2008</div>
+    <a target=NewTab href="https://gozlemler.blogspot.com/2008/05/saraybosna-gezisi.html">Saraybosna Gezisi</a>
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj_WdENxwah2OKla2DFDfl84nou8ez_cCTMuXBod95j_MSG-dQcOvT1kQ5QRDV3MWrqBdV0e_WPNkPehY2lfOhlFBmqb9718mloLDjVOfMXQEb-SNTh983BpDQTXbNzyZeZru6aaGnNhhGqUwQYWMrCfs24KXHPGgbyq7yeKB9gxEsCsNNLjA/s72-w400-c-h266/Saraybosna.jpg" />
+    <div class="my-text">Türkiye’den gelen misafirlerimiz sadece 8 gün kalacakları için yoğun bir gezi programı yaptık. Pazartesi günü Saraybosna şehir turu yapmaları planlandı.</div>
 </div>
 <div class="my-item">
-    <div class="my-date">27 Mayıs 2013</div>
-    <a href="https://gozlemler.blogspot.com/2013/05/abdnin-devsirme-sistemi.html">ABD’nin Devşirme Sistemi</a>
-    <img src="https://3.bp.blogspot.com/-NisIf5tyzgQ/UaO68wvHrOI/AAAAAAAABik/gbbNPBKWzDQ/s72-c/TACC-Projesi2.jpg" />
-    <div class="my-text">ABD üniversiteleri başka ülkelerden parlak ve seçilmiş üniversite (hatta lise) mezunlarını kabul ediyorlar, onlara ciddi bir yatırım yapıyorlar.</div>
-</div>
-<div class="my-item">
-    <div class="my-date">21 Mayıs 2013</div>
-    <a href="https://gozlemler.blogspot.com/2013/05/bir-gunde-uc-toren.html">Bir Günde Üç Tören</a>
-    <img src="https://3.bp.blogspot.com/--KSTsNBhHSs/UZyzlci-coI/AAAAAAAABiU/LhJb7FlUWNc/s72-c/Imran-Dekan-Torende.jpg" />
-    <div class="my-text">17 Mayıs Cuma Atatürk Havalimanına gitmek üzere saat 8:30’da yola çıktık. Anadolu yakasında oturanlar için Atatürk Havalimanı sevimsiz bir yerdir, ulaşılması zor.</div>
+    <div class="my-date">4 Ekim 2009</div>
+    <a href="https://gozlemler.blogspot.com/2009/10/sinann-su-kemerleri.html">Sinan'ın su kemerleri</a>
+    <img src="https://3.bp.blogspot.com/_IcY9qjlM2Vk/SyURcalenHI/AAAAAAAABGA/yv96cs3lrIk/s72-c/Egrikemer" />
+    <div class="my-text">Geçen hafta sonu bir turla Mimar Sinan'ın Istanbul'a su getirmek için yaptığı su yollarını (kemerleri) gezdik. Öğrendiğimize göre Istanbul eski dönemlerde de su sıkıntısı çekmiş.</div>
 </div>
 <div class="my-item">
     <div class="my-date">8 Aralık 2009</div>
@@ -79,18 +80,30 @@
     <div class="my-text">Sabah erken saatlerde Atatürk Havalaminanına gidiyoruz. Istanbul trafiği bu karanlık saatlerde sorunsuz! Önceki gece Bolu’dan gelen...</div>
 </div>
 <div class="my-item">
-    <div class="my-date">4 Ekim 2009</div>
-    <a href="https://gozlemler.blogspot.com/2009/10/sinann-su-kemerleri.html">Sinan'ın su kemerleri</a>
-    <img src="https://3.bp.blogspot.com/_IcY9qjlM2Vk/SyURcalenHI/AAAAAAAABGA/yv96cs3lrIk/s72-c/Egrikemer" />
-    <div class="my-text">Geçen hafta sonu bir turla Mimar Sinan'ın Istanbul'a su getirmek için yaptığı su yollarını (kemerleri) gezdik. Öğrendiğimize göre Istanbul eski dönemlerde de su sıkıntısı çekmiş.</div>
+    <div class="my-date">21 Mayıs 2013</div>
+    <a href="https://gozlemler.blogspot.com/2013/05/bir-gunde-uc-toren.html">Bir Günde Üç Tören</a>
+    <img src="https://3.bp.blogspot.com/--KSTsNBhHSs/UZyzlci-coI/AAAAAAAABiU/LhJb7FlUWNc/s72-c/Imran-Dekan-Torende.jpg" />
+    <div class="my-text">17 Mayıs Cuma Atatürk Havalimanına gitmek üzere saat 8:30’da yola çıktık. Anadolu yakasında oturanlar için Atatürk Havalimanı sevimsiz bir yerdir, ulaşılması zor.</div>
+</div>
+<div class="my-item">
+    <div class="my-date">27 Mayıs 2013</div>
+    <a href="https://gozlemler.blogspot.com/2013/05/abdnin-devsirme-sistemi.html">ABD’nin Devşirme Sistemi</a>
+    <img src="https://3.bp.blogspot.com/-NisIf5tyzgQ/UaO68wvHrOI/AAAAAAAABik/gbbNPBKWzDQ/s72-c/TACC-Projesi2.jpg" />
+    <div class="my-text">ABD üniversiteleri başka ülkelerden parlak ve seçilmiş üniversite (hatta lise) mezunlarını kabul ediyorlar, onlara ciddi bir yatırım yapıyorlar.</div>
+</div>
+<div class="my-item">
+    <div class="my-date">28 Mart 2020</div>
+    <a href="https://gozlemler.blogspot.com/2020/03/odtu.html">ODTÜ’de Önce Öğrenci Sonra Hoca</a>
+    <img src="https://lh3.googleusercontent.com/_x_e1oGS8yVnw5YL48Jfb5sDOfx-0YPuBhgF_Ah3ta6N6Px6nxKsaTqHJqrxev1TZRAoX0a9tWoTKWilTtxEs7-uSOruz2bisHz9G9Be0jS4i0VZrTD13II2Vzys5qm5TPmhP7FO5t9uHO8S4TKp9A=s72-c" />
+    <div class="my-text">Bir Ankara’lı olarak 1972 yılında Ankara Kurtuluş Lisesini birincilikle bitirdiğimde mühendislik okumak istiyordum.</div>
 </div>
 <br />
-<h3>2. Ali Demir</h3>
+<h3 id=demir>Ali Demir</h3>
 <div class="my-item">
-    <div class="my-date">29 Ocak 2023</div>
-    <a href="https://gozlemler.blogspot.com/2023/01/osman-ari.html">Yaşarken dost, öldükten sonra da yol gösterici</a>
-    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjRAqqq1wf6I7e4GJi1bWFvkfU73eZ8AGMwP73euncXHmd_Z2nRka3Lx6U5LkF1_23yYLV0KyCWr5IRJk7SfCjv0GTtOZxmXCbZIMHE5-4zAw7ZfcYOJg8FfauvoSZqhEevc7IBCa8vgA7i3DcAkWCqWe4LSIhVLwe_BABOD0Q5bGWK25HNvw/s72-w256-c-h320/Osman%20Ari.jpg" />
-    <div class="my-text">Müslüman dosdoğru olan ve sözünde durandır. Osman Kardeşim bir Müslümandı, dosdoğruydu ve sözünde dururdu.  Onunla her sözleştiğimizde mutlaka zamanında önce sözleştiğimiz yerde olurdu. En son ameliyatları...</div>
+    <div class="my-date">23 Ağustos 2021</div>
+    <a href="https://gozlemler.blogspot.com/2021/08/tanr-misafiri.html">Tanrı Misafiri – Gök Sofrası</a>
+    <img src="https://1.bp.blogspot.com/-qE06KAVJNgg/YSRWu4H8UrI/AAAAAAAAcd8/_KtRDwULTKUrZALWfQj1xXsRup0cqPhrgCLcBGAsYHQ/s72-w400-c-h303/G%25C3%25BCnay.jpg" />
+    <div class="my-text">Durmuş Günay Hocayı Isparta’daki evinde ziyaret etmeyi uzun zamadır arzu ediyorduk. Seyahat davetimize maalesef Osman Arı ve benim haricimde katılım olmadı. Biz iki kişinin “yeter sayı” olduğuna karar vererek...</div>
 </div>
 <div class="my-item">
     <div class="my-date">31 Aralık 2021</div>
@@ -99,36 +112,18 @@
     <div class="my-text">Biliyorum “Büyük acılar dilsizdir.” Hangi yaşta olursa olsun Anne ölümü de büyük acıdır. “Benim kaderimi annem yazdı” dersem bu küfür mü olur. Ama “annemin duasıdır benim hayatımı...”</div>
 </div>
 <div class="my-item">
-    <div class="my-date">23 Ağustos 2021</div>
-    <a href="https://gozlemler.blogspot.com/2021/08/tanr-misafiri.html">Tanrı Misafiri – Gök Sofrası</a>
-    <img src="https://1.bp.blogspot.com/-qE06KAVJNgg/YSRWu4H8UrI/AAAAAAAAcd8/_KtRDwULTKUrZALWfQj1xXsRup0cqPhrgCLcBGAsYHQ/s72-w400-c-h303/G%25C3%25BCnay.jpg" />
-    <div class="my-text">Durmuş Günay Hocayı Isparta’daki evinde ziyaret etmeyi uzun zamadır arzu ediyorduk. Seyahat davetimize maalesef Osman Arı ve benim haricimde katılım olmadı. Biz iki kişinin “yeter sayı” olduğuna karar vererek...</div>
+    <div class="my-date">29 Ocak 2023</div>
+    <a href="https://gozlemler.blogspot.com/2023/01/osman-ari.html">Yaşarken dost, öldükten sonra da yol gösterici</a>
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjRAqqq1wf6I7e4GJi1bWFvkfU73eZ8AGMwP73euncXHmd_Z2nRka3Lx6U5LkF1_23yYLV0KyCWr5IRJk7SfCjv0GTtOZxmXCbZIMHE5-4zAw7ZfcYOJg8FfauvoSZqhEevc7IBCa8vgA7i3DcAkWCqWe4LSIhVLwe_BABOD0Q5bGWK25HNvw/s72-w256-c-h320/Osman%20Ari.jpg" />
+    <div class="my-text">Müslüman dosdoğru olan ve sözünde durandır. Osman Kardeşim bir Müslümandı, dosdoğruydu ve sözünde dururdu.  Onunla her sözleştiğimizde mutlaka zamanında önce sözleştiğimiz yerde olurdu. En son ameliyatları...</div>
 </div>
 <br />
-<h3>3. Ertuğrul Taçgın</h3>
+<h3 id=tacgin>Ertuğrul Taçgın</h3>
 <div class="my-item">
-    <div class="my-date">16 Ocak 2023</div>
-    <a href="https://gozlemler.blogspot.com/2023/01/yaratmak-surekli.html">Yaratmak sürekli mi?</a>
-    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhjf0S8KQadWPDPCDcwtON5cb5nLo37rp27ZKDrfBrIfgOI98ben9XurTah0oLotqKQF3blh31f4evfFlkoYSB1bgEwJLKAvyMz5wlIv0G9xSr8IoTEQjae_xqE6wYIMZWr0wwl6AKYaEJFiGLxsGLXZVH-4b0bjT5CGerPid_wDzxdvZvOcQ/s72-w400-c-h214/MuhammetMag_001.jpg" />
-    <div class="my-text">Allah acaba evreni başlangıçta ol deyip bir anda yaratmış sonra kendi haline mi bırakmış, yoksa arasıra müdahele edip durumu kontrol alıyor sonra yine kendi haline mi bırakıyor, yoksa her an yaratılış faaliyetine devam mı ediyor?</div>
-</div>
-<div class="my-item">
-    <div class="my-date">Ocak 05, 2023</div>
-    <a target=NewTab href="https://korunmuskitap.blogspot.com/2023/01/kader.html">Kader Nasıl Anlaşılmalı?</a>
-    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwZ813ccpgSlNimMKFl1omMskVW8419JPzi_d9DfzLbmhSE3ywV_quSP8KQpCIFEAQT4jpjleXmdFMR_2urWtmId3lcdIoNsA9QVFqOjsK8x2wFbdOeYdY0xF7z4Jt2PtDxaQo2WBTM_46Gd49gslwGISQ77z2anW8SvYVMk-FaFWM0QJYKQ/s72-w400-c-h191/kaza-ve-kader.jpg" />
-    <div class="my-text">Kaderin anlaşılması ile ilgili olarak, yelpazenin bir ucunda kişi kendi kaderini hür iradesiyle kendisi belirler yani kader yoktur şeklindeki anlayışın yelpazenin diğer ucunda ise...</div>
-</div>
-<div class="my-item">
-    <div class="my-date">25 Aralık 2022</div>
-    <a href="https://gozlemler.blogspot.com/2022/12/soluk-mavi.html">Soluk Mavi Nokta</a>
-    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjT6JekIBo_Npq3CFHPOGgxMGnBuQ0ID8Pga5ULccWOcrfaMyN475KLb1rOpdGudL1p2W8wnTUKw1jPIBnN7ACH_CQx4q-UBll-PjId2i6u1y24ULh_Pn3yyJMpJipxPiCJEqr6mq143GGMj5sKPDqwBr10shs4g1QIJAzwht-UxnR82OM_Vw/s72-w400-c-h348/pale%20blue%20dot.jpg" />
-    <div class="my-text">Dünyanın kendisinin en meşhur fotoğrafı... Voyager 1 uzay aracının uzaklara doğru giderken geriye bakıp çektiği son görüntü. Meşhur bir fizikçi "Pale blue dot" demiş... </div>
-</div>
-<div class="my-item">
-    <div class="my-date">Ekim 10, 2021</div>
-    <a target=NewTab href="https://korunmuskitap.blogspot.com/2021/10/itiraz.html">Felsefeye İtiraz</a>
-    <img />
-    <div class="my-text">Öncelikle, "Felsefenin çöküşünde İmam Gazali'nin rolü" şeklindeki başlık yanıltıcı ve ironik; aslında kasdettiği ise, "Gazali kim oluyor ki felsefeyi çökertsin, İslam dünyasında düşünce...</div>
+    <div class="my-date">Ocak 15, 2020</div>
+    <a target=NewTab href="https://korunmuskitap.blogspot.com/2020/01/hiclik.html">Sırlı Bir Makam: Hiçlik</a>
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjqjHRewvK91OrghXgiZq2vCUuT7x5LzFXe5TsJ2cYb-jGDEUCsgdL6kbFNZqFcLjvKSAECKvqcL7m6R4t7uNhC-5WrHM7Xl2E7evNcPzZv0rmM4beO05-ycR8Bt3nM0uZ0eUT1hzNVgYH0247ObINutU2R35GzT_kdAABYS7gRuYIIR3qkKw/s72-w278-c-h400/hi%C3%A7.jpg" />
+    <div class="my-text">"Biz emaneti, göklere, yere ve dağlara teklif ettik de onlar bunu yüklenmekten çekindiler. Onu insan yüklendi. Doğrusu o çok zalim, çok cahildir" (Ahzab 72)</div>
 </div>
 <div class="my-item">
     <div class="my-date">2 Mart 2020</div>
@@ -137,9 +132,27 @@
     <div class="my-text">Fazla tevazunun sonu vasat insandan nasihat dinlemektir :) İbn-i Haldun'a ait olup olmadığı hususunda emin olmadığım bu alıntıladığım metin hakkında, sosyal medyada... </div>
 </div>
 <div class="my-item">
-    <div class="my-date">Ocak 15, 2020</div>
-    <a target=NewTab href="https://korunmuskitap.blogspot.com/2020/01/hiclik.html">Sırlı Bir Makam: Hiçlik</a>
-    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjqjHRewvK91OrghXgiZq2vCUuT7x5LzFXe5TsJ2cYb-jGDEUCsgdL6kbFNZqFcLjvKSAECKvqcL7m6R4t7uNhC-5WrHM7Xl2E7evNcPzZv0rmM4beO05-ycR8Bt3nM0uZ0eUT1hzNVgYH0247ObINutU2R35GzT_kdAABYS7gRuYIIR3qkKw/s72-w278-c-h400/hi%C3%A7.jpg" />
-    <div class="my-text">"Biz emaneti, göklere, yere ve dağlara teklif ettik de onlar bunu yüklenmekten çekindiler. Onu insan yüklendi. Doğrusu o çok zalim, çok cahildir" (Ahzab 72)</div>
+    <div class="my-date">Ekim 10, 2021</div>
+    <a target=NewTab href="https://korunmuskitap.blogspot.com/2021/10/itiraz.html">Felsefeye İtiraz</a>
+    <img />
+    <div class="my-text">Öncelikle, "Felsefenin çöküşünde İmam Gazali'nin rolü" şeklindeki başlık yanıltıcı ve ironik; aslında kasdettiği ise, "Gazali kim oluyor ki felsefeyi çökertsin, İslam dünyasında düşünce...</div>
+</div>
+<div class="my-item">
+    <div class="my-date">25 Aralık 2022</div>
+    <a href="https://gozlemler.blogspot.com/2022/12/soluk-mavi.html">Soluk Mavi Nokta</a>
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjT6JekIBo_Npq3CFHPOGgxMGnBuQ0ID8Pga5ULccWOcrfaMyN475KLb1rOpdGudL1p2W8wnTUKw1jPIBnN7ACH_CQx4q-UBll-PjId2i6u1y24ULh_Pn3yyJMpJipxPiCJEqr6mq143GGMj5sKPDqwBr10shs4g1QIJAzwht-UxnR82OM_Vw/s72-w400-c-h348/pale%20blue%20dot.jpg" />
+    <div class="my-text">Dünyanın kendisinin en meşhur fotoğrafı... Voyager 1 uzay aracının uzaklara doğru giderken geriye bakıp çektiği son görüntü. Meşhur bir fizikçi "Pale blue dot" demiş... </div>
+</div>
+<div class="my-item">
+    <div class="my-date">Ocak 05, 2023</div>
+    <a target=NewTab href="https://korunmuskitap.blogspot.com/2023/01/kader.html">Kader Nasıl Anlaşılmalı?</a>
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwZ813ccpgSlNimMKFl1omMskVW8419JPzi_d9DfzLbmhSE3ywV_quSP8KQpCIFEAQT4jpjleXmdFMR_2urWtmId3lcdIoNsA9QVFqOjsK8x2wFbdOeYdY0xF7z4Jt2PtDxaQo2WBTM_46Gd49gslwGISQ77z2anW8SvYVMk-FaFWM0QJYKQ/s72-w400-c-h191/kaza-ve-kader.jpg" />
+    <div class="my-text">Kaderin anlaşılması ile ilgili olarak, yelpazenin bir ucunda kişi kendi kaderini hür iradesiyle kendisi belirler yani kader yoktur şeklindeki anlayışın yelpazenin diğer ucunda ise...</div>
+</div>
+<div class="my-item">
+    <div class="my-date">16 Ocak 2023</div>
+    <a href="https://gozlemler.blogspot.com/2023/01/yaratmak-surekli.html">Yaratmak sürekli mi?</a>
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhjf0S8KQadWPDPCDcwtON5cb5nLo37rp27ZKDrfBrIfgOI98ben9XurTah0oLotqKQF3blh31f4evfFlkoYSB1bgEwJLKAvyMz5wlIv0G9xSr8IoTEQjae_xqE6wYIMZWr0wwl6AKYaEJFiGLxsGLXZVH-4b0bjT5CGerPid_wDzxdvZvOcQ/s72-w400-c-h214/MuhammetMag_001.jpg" />
+    <div class="my-text">Allah acaba evreni başlangıçta ol deyip bir anda yaratmış sonra kendi haline mi bırakmış, yoksa arasıra müdahele edip durumu kontrol alıyor sonra yine kendi haline mi bırakıyor, yoksa her an yaratılış faaliyetine devam mı ediyor?</div>
 </div>
 <br />
