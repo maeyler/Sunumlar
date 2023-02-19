@@ -45,16 +45,15 @@
         font-size: 13px;
         margin: 5px;
     }
-    .my-item a {
+    .my-item > a:nth-child(2) {
         display: block;
         margin: 8px 0;
     }
     .my-item img {
         background-color: gray;
-        display: inline-block;
         width: 72px;
         aspect-ratio: 1;
-        margin: 5px;
+        margin: 5px 0;
     }
 </style>
     
@@ -63,7 +62,7 @@
 <h3 id=ture>Erkan Türe</h3>
 <div class="my-item">
     <div class="my-date">10 Mayıs 2008</div>
-    <a target=NewTab href="https://gozlemler.blogspot.com/2008/05/saraybosna-gezisi.html">Saraybosna Gezisi</a>
+    <a href="https://gozlemler.blogspot.com/2008/05/saraybosna-gezisi.html">Saraybosna Gezisi</a>
     <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj_WdENxwah2OKla2DFDfl84nou8ez_cCTMuXBod95j_MSG-dQcOvT1kQ5QRDV3MWrqBdV0e_WPNkPehY2lfOhlFBmqb9718mloLDjVOfMXQEb-SNTh983BpDQTXbNzyZeZru6aaGnNhhGqUwQYWMrCfs24KXHPGgbyq7yeKB9gxEsCsNNLjA/s72-w400-c-h266/Saraybosna.jpg" />
     <div class="my-text">Türkiye’den gelen misafirlerimiz sadece 8 gün kalacakları için yoğun bir gezi programı yaptık. Pazartesi günü Saraybosna şehir turu yapmaları planlandı.</div>
 </div>
@@ -156,3 +155,12 @@
     <div class="my-text">Allah acaba evreni başlangıçta ol deyip bir anda yaratmış sonra kendi haline mi bırakmış, yoksa arasıra müdahele edip durumu kontrol alıyor sonra yine kendi haline mi bırakıyor, yoksa her an yaratılış faaliyetine devam mı ediyor?</div>
 </div>
 <br />
+<script>
+    for (let x of document.body.querySelectorAll('.my-item > a')) {
+        let a = document.createElement('a')
+        a.append(x.nextElementSibling) //make img
+        if (x.href) a.href = x.href  //use the same link
+        if (x.target) a.target = x.target  //and target
+        x.after(a)  //insert a after x
+    }
+</script>
