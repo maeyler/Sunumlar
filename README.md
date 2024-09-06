@@ -3,6 +3,7 @@ Aşağıdaki sunumların çoğu pdf, birkaç tanesi html.
 
 Zaman | Link | Video
 ----- | ---- | -----
+Eyl 2024 | [Korunmuşluk 2024](./docs/Korunmus.pdf) |
 May 2023 | [Yapay zekâ](https://eyler.blogspot.com/2023/05/sunumlar.html) | [YT](https://youtube.com/@okuyun5/playlists)
 Şub 2023 | [Sanal Kitaplarım](https://maeyler.github.io/work) |
 Mar 2022 | [Korunmuş Kitap](https://okuyun.github.io/Kitap/KK/korunmus) | [YT](https://youtu.be/-yQ-CEKOYzU)
