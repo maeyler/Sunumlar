@@ -3,7 +3,8 @@ Aşağıdaki sunumların çoğu pdf, birkaç tanesi html.
 
 Zaman | Link | Video
 ----- | ---- | -----
-Eyl 2024 | [Korunmuşluk 2024](./docs/Korunmus.pdf) &emsp; [PPT](https://docs.google.com/presentation/d/1mXccnWT8r2oyEaxk_hCiLVjtnvRJRww1/pub) | [YT](https://youtube.com/watch?v=5B0kK4_OaPc)
+Ara 2025 | [Iqra Tanıtım](https://okuyun.github.io/YZ/iqra/Iqra_sunum.pdf) | [YT](https://youtu.be/ycCW-oSijbs)
+Eyl 2024 | [Korunmuşluk 2024](./docs/Korunmus.pdf) &emsp; [PPT](https://docs.google.com/presentation/d/1mXccnWT8r2oyEaxk_hCiLVjtnvRJRww1/pub) | [YT](https://youtu.be/5B0kK4_OaPc)
 May 2023 | [Yapay zekâ](https://eyler.blogspot.com/2023/05/sunumlar.html) | [YT](https://youtube.com/@okuyun5/playlists)
 Şub 2023 | [Sanal Kitaplarım](https://maeyler.github.io/work) |
 Mar 2022 | [Korunmuş Kitap](https://okuyun.github.io/Kitap/KK/korunmus) | [YT](https://youtu.be/-yQ-CEKOYzU)
